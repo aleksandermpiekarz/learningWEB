@@ -12,9 +12,10 @@ import org.slf4j.LoggerFactory;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
         var webapp = new WebAppContext();
-        webapp.setResourceBase("src/main/webapp");
         webapp.setContextPath("/");
+        webapp.setResourceBase("src\\main\\webapp\\WEB-INF\\web.xml");
         webapp.setConfigurations(new Configuration[] {
                         new AnnotationConfiguration(),
                         new WebInfConfiguration(),
