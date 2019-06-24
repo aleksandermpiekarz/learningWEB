@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         var webapp = new WebAppContext();
-        webapp.setContextPath("/");
+        webapp.setContextPath("\\");
         webapp.setResourceBase("src\\main\\webapp\\WEB-INF\\web.xml");
         webapp.setConfigurations(new Configuration[] {
                         new AnnotationConfiguration(),
