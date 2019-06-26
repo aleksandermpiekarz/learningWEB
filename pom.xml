@@ -22,53 +22,54 @@
       <slf4j.version>1.8.0-beta4</slf4j.version>
   </properties>
 
-  <dependencies>
-     <dependency>
+    <dependencies>
+        <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
           <version>${junit.version}</version>
           <scope>test</scope>
-     </dependency>
-
-      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
-      <dependency>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+        <dependency>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.3</version>
-      </dependency>
-
-      <dependency>
+        </dependency>
+        <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
           <version>${servlet.version}</version>
           <scope>provided</scope>
-      </dependency>
-
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>${slf4j.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-      <dependency>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+          <version>${slf4j.version}</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-plus</artifactId>
           <version>${jetty.version}</version>
-      </dependency>
-
-      <dependency>
+        </dependency>
+        <dependency>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-annotations</artifactId>
           <version>${jetty.version}</version>
-      </dependency>
+        </dependency>
+
+        <!-- db -->
+        <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+          <version>1.4.199</version>
+        </dependency>
+
   </dependencies>
 
   <build>
@@ -121,11 +122,21 @@
 
         </plugin>
 
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
+          <configuration>
+              <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+
           <plugin>
-              <artifactId>maven-war-plugin</artifactId>
-              <version>3.2.3</version>
+              <groupId>org.flywaydb</groupId>
+              <artifactId>flyway-maven-plugin</artifactId>
+              <version>5.2.4</version>
               <configuration>
-                  <failOnMissingWebXml>false</failOnMissingWebXml>
+                  <url>jdbc:h2:file:./db</url>
+                  <user>sa</user>
               </configuration>
           </plugin>
 
