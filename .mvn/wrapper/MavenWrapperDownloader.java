@@ -75,6 +75,7 @@ public class MavenWrapperDownloader {
         }
         System.out.println("- Downloading from: " + url);
 
+
         File outputFile = new File(baseDirectory.getAbsolutePath(), MAVEN_WRAPPER_JAR_PATH);
         if(!outputFile.getParentFile().exists()) {
             if(!outputFile.getParentFile().mkdirs()) {

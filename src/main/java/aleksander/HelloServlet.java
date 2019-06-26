@@ -29,7 +29,8 @@ public class HelloServlet extends HttpServlet {
         this(new HelloService());
     }
 
-    HelloServlet(HelloService service){
+
+    private HelloServlet(HelloService service){
         this.service = service;
     }
     @Override
