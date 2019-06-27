@@ -1,4 +1,4 @@
-package aleksander;
+package aleksander.lang;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -13,7 +13,6 @@ public class Lang {
     @Id
     @GeneratedValue(generator="inc")
     @GenericGenerator(name="inc", strategy = "increment")
-
     private Integer id;
     private String welcomeMsg;
     private String code;
@@ -22,7 +21,7 @@ public class Lang {
      * Hibernate (JPA) uses it
      */
     @SuppressWarnings("unused")
-    private Lang() {
+    public Lang() {
         // this form used by Hibernate
     }
 

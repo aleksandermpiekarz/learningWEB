@@ -1,4 +1,4 @@
-package aleksander;
+package aleksander.hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import java.io.IOException;
-import java.util.Optional;
 
-@WebServlet(name = "hello", urlPatterns = {"/api/*"})
+@WebServlet(name = "hello", urlPatterns = {"/api"})
 public class HelloServlet extends HttpServlet {
     private final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
     private static final String NAME_PARAM = "name";
@@ -30,7 +29,7 @@ public class HelloServlet extends HttpServlet {
     }
 
 
-    private HelloServlet(HelloService service){
+    HelloServlet(HelloService service){
         this.service = service;
     }
     @Override

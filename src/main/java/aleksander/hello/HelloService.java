@@ -1,9 +1,10 @@
-package aleksander;
+package aleksander.hello;
 
+import aleksander.lang.Lang;
+import aleksander.lang.LangRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.Optional;
 
 public class HelloService {
